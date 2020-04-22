@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 extern "C"
 {
@@ -33,8 +34,10 @@ extern "C"
         return v->size();
     }
 
-    AbbrOut* vector_get(std::vector<AbbrOut>* v, int i){
-        return &(v->at(i));
+    const char* vector_get(std::vector<AbbrOut>* v, int i){
+        std::stringstream ss;
+        v->at(i).print(ss);
+        return ss.str().c_str();
     }
 }
 
