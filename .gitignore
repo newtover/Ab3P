@@ -2,8 +2,13 @@
 *.o
 *~
 
-WordData/cshset_*
-WordData/hshset_*
 identify_abbr
 make_wordCountHash
 make_wordSet
+
+bazel-Ab3P
+bazel-bin
+bazel-out
+bazel-testlogs
+
+.ijwb

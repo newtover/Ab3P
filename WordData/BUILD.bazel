@@ -1,0 +1,5 @@
+filegroup(
+    name = "WordData",
+    visibility = ['//visibility:public'],
+    srcs = glob(['*']),
+)

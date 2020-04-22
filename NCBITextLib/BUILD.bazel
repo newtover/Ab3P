@@ -1,0 +1,17 @@
+cc_library(
+    name = "ncbi_text_lib",
+    visibility = ['//visibility:public'],
+    srcs = glob(['lib/*.C', 'include/*.h']),
+    hdrs = glob(['include/*.h']),
+    includes = [
+        'include'
+    ]
+)
+
+cc_binary(
+    name = "ncbi_tl.so",
+    visibility = ['//visibility:public'],
+    srcs = glob(['lib/*.C', 'include/*.h']),
+    deps = [":ncbi_text_lib"],
+    linkshared = True,
+)

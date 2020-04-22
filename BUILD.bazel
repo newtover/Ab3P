@@ -1,0 +1,30 @@
+package(default_visibility = ['//visibility:public'])
+exports_files(['path_Ab3P'])
+
+cc_library(
+    name = "ab3p",
+    visibility = ['//visibility:public'],
+    srcs = glob(['lib/*.C']),
+    hdrs = glob(['lib/*.h']),
+    deps = [
+        '//NCBITextLib:ncbi_text_lib',
+    ],
+    copts = [
+        '-Ilib',
+        '-Iexternal/ab3p/lib',
+    ],
+)
+
+cc_binary(
+    name = "lib.so",
+    visibility = ['//visibility:public'],
+    srcs = glob(['lib/*.C']),
+    deps = [
+        ":ab3p"
+    ],
+    copts = [
+        '-Ilib',
+        '-Iexternal/ab3p/lib',
+    ],
+    linkshared = True,
+)
