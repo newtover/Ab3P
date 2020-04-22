@@ -26,7 +26,7 @@ public:
   {}
 
   void print ( ostream & out ) {
-    out << "  "  << sf << "|" << lf << "|" << prec;
+    out << sf << "|" << lf << "|" << sf_offset << "|" << lf_offset << "|" << prec << '|' << strat;
   }
 
 };

@@ -34,10 +34,15 @@ extern "C"
         return v->size();
     }
 
-    const char* vector_get(std::vector<AbbrOut>* v, int i){
+    const char* vector_get(std::vector<AbbrOut>* v, int i, char *wb, unsigned int bs){
         std::stringstream ss;
         v->at(i).print(ss);
-        return ss.str().c_str();
+        std::string str = ss.str();
+        if (str.size() < bs) {
+            str.copy(wb, bs);
+            return wb;
+        }
+        return 0;
     }
 }
 
