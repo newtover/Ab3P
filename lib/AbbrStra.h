@@ -25,7 +25,7 @@ public:
 class AbbrStra {
 public:
   AbbrStra();
-  ~AbbrStra();
+  virtual ~AbbrStra() {};
   void token(const char *str, char lst[1000][1000]); // tokennize & set ntk 
   long tokenize(const char *str, char lst[1000][1000]); //tokennize & return # tokens
   long num_token(const char *str); //return # tokens

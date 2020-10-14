@@ -30,12 +30,6 @@ AbbrStra::AbbrStra()
   npairs = tpairs = nsfs = nmatchs = amatchs = 0;
 }
 
-
-AbbrStra::~AbbrStra()
-{
-}
-
-
 void AbbrStra::token(const char *str, char lst[1000][1000])
 {
    long i,j=0,k=0;
