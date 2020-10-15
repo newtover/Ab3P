@@ -17,7 +17,7 @@ namespace iret {
 
 class offset_char_p {
 public:
- offset_char_p(void) : text(""), offset(0) { }
+ offset_char_p(void) : offset(0), text("") { }
   /*
   ~offset_char_p() {
     if ( text ) {

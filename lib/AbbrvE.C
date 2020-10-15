@@ -325,7 +325,7 @@ void AbbrvE::token(const char *pch){
    }
    lst.clear();                 // ready space for tokens
    cnam[0]=pch[0];
-   while(c=pch[i]){
+   while((c=pch[i])){
       switch(c){
          case '(': if(isblank(str[u-1])){
                       str[u++]=pch[i++];
@@ -384,7 +384,7 @@ void AbbrvE::token(const char *pch){
    lst.clear();                 // ready space for tokens
    cnam[0]=pch[0];
    cnam_offset[0] = 0;
-   while(c=pch[i]){
+   while((c=pch[i])){
       switch(c){
         case '(':   	   
                    //--- (h)alpha -> (h)alpha, (h)-alpha -> ( h ) -alpha
