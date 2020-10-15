@@ -379,7 +379,7 @@ void AbbrvE::token(const char *pch){
    long u=1;
    vector<bool> openChFlag1,openChFlag2;
    long cflag;
-   long ii, jj, kk, sz;
+   long ii, kk, sz;
    char c,*str=cnam;
    lst.clear();                 // ready space for tokens
    cnam[0]=pch[0];
@@ -657,8 +657,7 @@ bool AbbrvE::Test(const char *str){
 
 void AbbrvE::Proc(char *pxh){
 
-   long i,j;
-   char *pch,*ptr;
+   long i;
    pMt->segment(pxh);
 
    // determine sentence offsets
