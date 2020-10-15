@@ -111,7 +111,6 @@ Doc<Z>::~Doc() {
 
 template<class Z>
 void Doc<Z>::gopen_map(void) {
-   char cnam[max_str];
    ifstream *pfin;
 
    pfin=get_Istr("n");
@@ -198,8 +197,6 @@ void Doc<Z>::add(const char *str,Z n){
 
 template<class Z>
 void Doc<Z>::close(void){
-   int lxn;
-   char *pch;
    if(open2) {
       nw=0;
       pMp->Set();
@@ -215,8 +212,6 @@ void Doc<Z>::close(void){
 
 template<class Z>
 void Doc<Z>::build(Dmap<Z> &Mp) {
-   int lxn;
-   char *pch;
    if(open2) {
       close();
       clear();

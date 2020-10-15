@@ -174,7 +174,7 @@ void XPost<Y,Z>::create_Terms(Doc<Z> &SDc) {
    SDc.gopen_map();
    for(i=0;i<SDc.ndoc;i++){
       SDc.read(i);
-      while(pch=SDc.show(j)){
+      while((pch=SDc.show(j))){
          if((q=Mp.find(pch))!=qe){
             q->second+=1;
          }
@@ -210,8 +210,7 @@ void XPost<Y,Z>::create_Terms(Doc<Z> &SDc) {
 
 template<class Y,class Z>
 void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc) {
-   long sm=0,i,j,m,n1,n2;
-   long *sn,*ss,sp,*px=NULL,*adr;
+   long sm=0,i,j;
    Y k;
    Z u;
    const char *pch;
@@ -233,7 +232,7 @@ void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc) {
       k=(Y)SDc.nw;
       pfs->write((char*)&k,sizeof(Y));
       sm+=k;
-      while(pch=SDc.show(u)) {
+      while((pch=SDc.show(u))) {
          k=(Y)pCh->count(pch)-1;
          pfw->write((char*)&k,sizeof(Y));
          pfx->write((char*)&u,sizeof(Z));
@@ -249,8 +248,7 @@ void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc) {
 
 template<class Y,class Z>
 void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc,float (*d_local)(int,long)) {
-   long sm=0,i,j,m,n1,n2;
-   long *sn,*ss,sp,*px=NULL,*adr;
+   long sm=0,i,j,n1;
    Y k;
    Z u,sum;
    const char *pch;
@@ -269,7 +267,7 @@ void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc,float (*d_local)(int,long)) {
       pfa->write((char*)&sm,sizeof(long));
       SDc.read(i);
       sum=0;
-      while(pch=SDc.show(u)) {
+      while((pch=SDc.show(u))) {
          if(!strstr(pch," ")) sum+=u;
       }
       n1=rnd(sum);
@@ -277,7 +275,7 @@ void XPost<Y,Z>::create_DBinz(Doc<Z> &SDc,float (*d_local)(int,long)) {
       sm+=k;
       pfs->write((char*)&k,sizeof(Y));
       SDc.reset();
-      while(pch=SDc.show(u)) {
+      while((pch=SDc.show(u))) {
          k=(Y)pCh->count(pch)-1;
          u=(Z)d_local((int)rnd(u),n1);
          pfw->write((char*)&k,sizeof(Y));
@@ -365,7 +363,6 @@ void XPost<Y,Z>::readz_db(Y n) {
 
 template<class Y,class Z>
 void XPost<Y,Z>::gclose_db_map(void) {
-   long i;
    if(open1){
       dst_Mmap("wd",(char*&)term);
       if(Exists("xd"))dst_Mmap("xd",(char*&)dw);
@@ -406,7 +403,6 @@ Z *XPost<Y,Z>::readz(Y n) {
 
 template<class Y,class Z>
 void XPost<Y,Z>::gclose_map(void) {
-   long i;
    if(open2) {
       dst_Mmap("f",(char*&)freq);
       dst_Mmap("a",(char*&)addr);
