@@ -121,6 +121,7 @@ alpha beta gamma (ABG)
  */
 class FirstLet : public AbbrStra {
 public:
+  using AbbrStra::set_condition;
   virtual bool set_condition(const char *str1, const char *str2, char *str);
   virtual long strategy(const char *sf, const char *str); 
 };
@@ -128,6 +129,7 @@ public:
 
 class FirstLetOneChSF : public AbbrStra {
 public:
+  using AbbrStra::set_condition;
   virtual bool set_condition(const char *str1, const char *str2, char *str);
   virtual long strategy(const char *sf, const char *str); 
 };
