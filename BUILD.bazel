@@ -10,6 +10,8 @@ cc_library(
         '//NCBITextLib:ncbi_text_lib',
     ],
     copts = [
+        '-Wno-missing-braces',
+        '-Wno-deprecated-register',
         '-Ilib',
         '-Iexternal/ab3p/lib',
     ],
@@ -18,11 +20,13 @@ cc_library(
 cc_binary(
     name = "lib.so",
     visibility = ['//visibility:public'],
-    srcs = glob(['lib/*.C']),
+    srcs = [],
     deps = [
         ":ab3p"
     ],
     copts = [
+        '-Wno-missing-braces',
+        '-Wno-deprecated-register',
         '-Ilib',
         '-Iexternal/ab3p/lib',
     ],
