@@ -20,7 +20,7 @@ static void chomp(char *line)
 	int     i;
 
 	i = strlen(line) - 1;
-	while (i >= 0 && line[i] == '\n' || line[i] == '\r')
+	while (i >= 0 && (line[i] == '\n' || line[i] == '\r'))
 		line[i--] = '\0';
 }
 
@@ -207,8 +207,8 @@ void MPtok::tok_5_6_7()
 			if (i - 1 >= 0
 			&& i + 1 < text_len
 			&& ((option_new < 9
-				&& text[i - 1] == '+' || (text[i - 1] == '-' && option_hyphen == 0)
-				&& text[i + 1] == '+' || (text[i + 1] == '-' && option_hyphen == 0))
+				&& (text[i - 1] == '+' || (text[i - 1] == '-' && option_hyphen == 0))
+				&& (text[i + 1] == '+' || (text[i + 1] == '-' && option_hyphen == 0)))
 			|| (option_new >= 9
 				&& (text[i - 1] == '+' || text[i - 1] == '-')
 				&& (text[i + 1] == '+' || text[i + 1] == '-'))))
