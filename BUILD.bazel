@@ -20,7 +20,7 @@ cc_library(
 cc_binary(
     name = "lib.so",
     visibility = ['//visibility:public'],
-    srcs = [],
+    srcs = glob(['lib/*.C']),
     deps = [
         ":ab3p"
     ],
