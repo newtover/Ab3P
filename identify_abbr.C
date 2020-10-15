@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
     ab3p.get_abbrs( line, abbrs );
     cout << line << endl;
-    for ( int i = 0; i < abbrs.size() ; ++i )
+    for ( unsigned int i = 0; i < abbrs.size() ; ++i )
       cout << abbrs[i] << endl;
   }
 

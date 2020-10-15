@@ -27,7 +27,7 @@ void Ab3P::get_abbrs( char * text, vector<AbbrOut> & abbrs ) {
     ab.Proc(text); //extract potential SF & LF pairs
 
 
-    for(int i=0; i<ab.abb.size(); i++) {
+    for(unsigned int i=0; i<ab.abb.size(); i++) {
       AbbrOut result;
 
       //      cout << "SF: " << ab.abb[i].abbs << "\n";
@@ -91,7 +91,7 @@ void Ab3P::try_strats ( const char * psf, const char * plf, bool swap,
   util.remove_nonAlnum(psf,sf); //sf will be w/o non-alnum
 
   //go through strategies
-  for( int j=0; j<strats.size(); j++) { 
+  for( unsigned int j=0; j<strats.size(); j++) {
     AbbrStra * strat =
       util.strat_factory(strats[j]); //set a paticular strategy
     strat->wData = wrdData; //set wordset, stopword
@@ -140,7 +140,7 @@ void Ab3P::try_strats_pot_abbr ( const Pot_Abbr & abb, bool swap,
   util.remove_nonAlnum(abb.abbs,sf); //sf will be w/o non-alnum
 
   //go through strategies
-  for( int j=0; j<strats.size(); j++) { 
+  for( unsigned int j=0; j<strats.size(); j++) {
     AbbrStra * strat =
       util.strat_factory(strats[j]); //set a paticular strategy
     strat->wData = wrdData; //set wordset, stopword
@@ -155,7 +155,7 @@ void Ab3P::try_strats_pot_abbr ( const Pot_Abbr & abb, bool swap,
                << abb.abbl_tokens.size() << ' ' <<strat->ntk
                << '\n';
           cout << "Pot_Abbr tokens:\n";
-          for ( int it = 0; it < abb.abbl_tokens.size(); ++it ) {
+          for ( unsigned int it = 0; it < abb.abbl_tokens.size(); ++it ) {
             cout << abb.abbl_tokens[it].text << '\n';
           }
           cout << "AbbrStra tokens:\n";
@@ -163,7 +163,7 @@ void Ab3P::try_strats_pot_abbr ( const Pot_Abbr & abb, bool swap,
             cout << strat->tok[it] << '\n';
           }
         }
-        for ( int it = 0; it < abb.abbl_tokens.size(); ++it ) {
+        for ( unsigned int it = 0; it < abb.abbl_tokens.size(); ++it ) {
           if ( abb.abbl_tokens[it].text != strat->tok[it] ) {
             cout << "tokens differ: " << abb.abbl_tokens[it].text
                  << ' ' << strat->tok[it] << '\n';

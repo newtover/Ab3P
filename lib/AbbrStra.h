@@ -98,7 +98,7 @@ public:
   char lf[10000]; //lf found by a strategy 
   char tok[1000][1000]; //token of potential lf 
                         //lower after strategy, original after extract_lf(b,e,str)
-  long ntk; //# tokens
+  unsigned long ntk; //# tokens
   int lf_begin_token;         // first token in LF
   long mod[100][2]; //match locations of tok with a given sf
      //mod[sf_inx][0]=tok inx, mod[sf_inx][1]=match loc in tok[mod[sf_inx][0]] 
