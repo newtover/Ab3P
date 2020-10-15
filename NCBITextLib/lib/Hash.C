@@ -22,7 +22,7 @@ void Hash::create_htable(strMap &Mp,int excess) {
    ct=nwrds;
    tnum=1;
    u=0;
-   while(ct=ct/2){tnum*=2;u++;}
+   while((ct=ct/2)){tnum*=2;u++;}
    if(u>30){cout << "Error in size, " << u << endl;exit(1);}
    i=0;
    while((u<32)&&(i<excess)){tnum*=2;u++;i++;}
@@ -47,7 +47,7 @@ void Hash::create_htable(strMap &Mp,int excess) {
       cptr=p->first;
       ct=0;
       i=0;
-      while(u=*(cptr++)) {
+      while((u=*(cptr++))) {
          switch(i) {
             case 0: ct+=*(pc0+u);
                     break;
@@ -101,7 +101,7 @@ void Hash::create_htable(strMap &Mp,int excess) {
       uptr=cptr=p->first;
       ct=0;
       i=0;
-      while(u=*(cptr++)) {
+      while((u=*(cptr++))) {
          switch(i){
             case 0: ct+=*(pc0+u);
                     break;
@@ -206,7 +206,7 @@ long Hash::find(const char *str) {
    register long ct=0,i=0,k;
    register int ic;
    register const char *utr=str;
-   while(ic=*(utr++)) {
+   while((ic=*(utr++))) {
       switch(i) {
          case 0: ct+=*(px0+ic);
                  break;
@@ -300,7 +300,7 @@ void Chash::create_ctable(strMap &Mp,int excess) {
    typename strMap::iterator p=Mp.begin();
    typename strMap::iterator q=Mp.end();
    while(p!=q){
-      if(n=find(p->first)) {
+      if((n=find(p->first))) {
          pct[n-1]=p->second;
       }        
       else {
@@ -322,7 +322,7 @@ void Chash::create_ctable_STerm(strMap &Mp,int excess) {
    typename strMap::iterator p=Mp.begin();
    typename strMap::iterator q=Mp.end();
    while(p!=q) {
-      if(n=find(p->first)) {
+      if((n=find(p->first))) {
          pct[n-1]=i;
       }        
       else {
