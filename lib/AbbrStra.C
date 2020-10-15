@@ -100,7 +100,7 @@ long AbbrStra::num_token(const char *str)
 // fch is 1st char of str token from backward
 long AbbrStra::first_ch(const char *str, char *fch, long num)
 {
-  long i, j, numtk;
+  long i, numtk;
   char tk[1000][1000];
 
   numtk = tokenize(str,tk);
@@ -144,8 +144,8 @@ void AbbrStra::str_tolower(const char *str1, char *str2)
 //copy num tokens from back of str1 to str2 
 long AbbrStra::get_str(const char *str1, char *str2, long num)
 {
-  char ch, tk[1000][1000];
-  long i, j, numtk;
+  char tk[1000][1000];
+  long i, numtk;
 
   if(num<0) { cout<<"num<0\n"; exit(1); }
   numtk = tokenize(str1,tk);
@@ -184,7 +184,7 @@ bool AbbrStra::is_onealpha(const char *str)
 
 long AbbrStra::count_upperstr(const char *str)
 {
-  long i, j, k, numtk;
+  long i, j, numtk;
   char tk[1000][1000];
 
   numtk = tokenize(str,tk);
@@ -323,7 +323,7 @@ bool AbbrStra::exist_skipword(long nsf)
 
 bool AbbrStra::exist_n_skipwords(long nsf, long n)
 {
-  long i=0, j, k;
+  long i=0, k;
   bool flag=false;
 
   //k: # skip words
@@ -342,7 +342,7 @@ bool AbbrStra::exist_n_skipwords(long nsf, long n)
 //exists n consecutive skip stopwords between tokens
 bool AbbrStra::exist_n_stopwords(long nsf, long n)
 {
-  long i=0, j, k;
+  long i=0, k;
   bool flag=false;
 
   while(i<nsf) {
@@ -366,7 +366,7 @@ bool AbbrStra::exist_n_stopwords(long nsf, long n)
 
 bool AbbrStra::stopword_ok(long nsf, long nsw)
 {
-  long i=0, j, k;
+  long i=0, k;
 
   while(i<nsf) {
     if(i==(nsf-1)) k=ntk-mod[i][0]-1;
@@ -386,7 +386,7 @@ bool AbbrStra::stopword_ok(long nsf, long nsw)
 
 bool AbbrStra::skip_stop_ok(long nsf, long nsw, long n)
 {
-  long i=0, j, k, nstp;
+  long i=0, k, nstp;
 
   while(i<nsf) {
     if(i==(nsf-1)) k=ntk-mod[i][0]-1;
@@ -410,7 +410,7 @@ bool AbbrStra::skip_stop_ok(long nsf, long nsw, long n)
 
 bool AbbrStra::skip_stop_ok2(long nsf, long nsw, long n)
 {
-  long i=0, j, k, nstp;
+  long i=0, k, nstp;
 
   while(i<nsf) {
     if(i==(nsf-1)) k=ntk-mod[i][0]-1;
@@ -434,7 +434,7 @@ bool AbbrStra::skip_stop_ok2(long nsf, long nsw, long n)
 
 bool AbbrStra::skipword_ok(long nsf, long nsw)
 {
-  long i=0, j, k;
+  long i=0, k;
 
   while(i<nsf) {
     if(i==(nsf-1)) k=ntk-mod[i][0]-1;
@@ -1221,7 +1221,7 @@ AbbrStra * StratUtil::strat_factory(string name)
 //grp will be Al+#ChInSF, Num+#ChInSF, or Spec+#ChInSF
 bool StratUtil::group_sf(const char *sf,  string &grp)
 {
-  long i, j, len=strlen(sf);
+  long i, len=strlen(sf);
   long al=0, num=0, nonalnum=0;
   long paren=0, sbrac=0;
 
@@ -1279,7 +1279,7 @@ bool StratUtil::group_sf(const char *sf,  string &grp)
 //add the condition |lf|>|sf|
 bool StratUtil::group_sf(const char *sf,  const char *lf, string &grp)
 {
-  long i, j, len=strlen(sf);
+  long i, len=strlen(sf);
   long al=0, num=0, nonalnum=0;
   long paren=0, sbrac=0;
 
