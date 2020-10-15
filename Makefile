@@ -1,6 +1,6 @@
 NCBITEXTLIB=NCBITextLib/
 LIBPATH=./lib
-OS=-g
+OS=-g -Wall -Wno-missing-braces -Wno-deprecated-register
 # OS=-O
 
 
