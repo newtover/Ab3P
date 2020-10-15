@@ -2,7 +2,7 @@ SRC_DIR=./
 TRASHFILES = *.o *~ *.bak core	
 LIB_INC=-I../include
 #.KEEP_STATE:
-OS=-g -Wall -Wno-missing-braces -Wno-deprecated-register
+OS=-g -Wall -Wno-missing-braces
 
 libText.a: FBase.o XPost.o Vnab.o Strset.o Hash.o runn.o
 	ar rus $@ $?

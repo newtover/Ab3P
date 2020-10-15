@@ -11,7 +11,7 @@ cc_library(
     ],
     copts = [
         '-Wno-missing-braces',
-        '-Wno-deprecated-register',
+        '-Wno-unused-function',
         '-Ilib',
         '-Iexternal/ab3p/lib',
     ],
@@ -26,7 +26,7 @@ cc_binary(
     ],
     copts = [
         '-Wno-missing-braces',
-        '-Wno-deprecated-register',
+        '-Wno-unused-function',
         '-Ilib',
         '-Iexternal/ab3p/lib',
     ],

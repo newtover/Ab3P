@@ -4,7 +4,7 @@ TRASHFILES = *.o *~ *.bak core *.a
 LIB_INC=-I. -I$(NCBITEXTLIB)/include
 #.KEEP_STATE:
 
-OS=-g -Wall -Wno-missing-braces -Wno-deprecated-register
+OS=-g -Wall -Wno-missing-braces
 
 libAb3P.a: MPtok.o AbbrStra.o AbbrvE.o Ab3P.o
 	ar rus $@ $?
