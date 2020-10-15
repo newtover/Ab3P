@@ -13,7 +13,6 @@ Hash::~Hash() {
 }
 
 void Hash::create_htable(strMap &Mp,int excess) {
-   char cnam[max_str];
    const char *cptr,*uptr;
    int u,len;
    long ct,i,j,k;
@@ -165,8 +164,6 @@ void Hash::create_htable(strMap &Mp,int excess) {
 }
 
 void Hash::gopen_htable_map(void) {
-   char cnam[max_str],*cptr;
-   int fld;
    long ct,asize,i;
    
    ifstream *pfin=get_Istr("nm");
@@ -190,10 +187,6 @@ void Hash::gopen_htable_map(void) {
 }
 
 void Hash::gopen_htable_copy(Hash *pH) {
-   char cnam[max_str],*cptr;
-   int fld;
-   long ct,asize,i;
-
    nwrds=pH->nwrds;
    tnum=pH->tnum;
 

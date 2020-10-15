@@ -16,7 +16,7 @@ float d_lc_func(int lc,long n) {
 }
 
 float d_wilbur_med(int lc,long m) {
-  float u,v;
+  float v;
   double md;
   if(m<dmt)md=dmt;
   else md=(double)m;
@@ -29,7 +29,7 @@ float d_bm25(int lc,long m) {
 }
 
 float s_wilbur_med(int lc,unsigned int m) {
-  float u,v;
+  float v;
   double md;
   if(m<dmt)md=dmt;
   else md=(double)m;
