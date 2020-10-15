@@ -382,7 +382,7 @@ void MPtok::tok_14()
 
 void MPtok::tok_15()
 {
-	int	i, j, k, a;
+	int	i, j, k;
 	char	buff[MAX_ABB + 1];
 
 	for (i = 0; i < text_len; i++)
@@ -449,7 +449,7 @@ void MPtok::tok_15()
 
 void MPtok::tok_15_1()
 {
-	int	i, j, k, tnum, p;
+	int	i, k, tnum, p;
 	char	buff[MAX_ABB + 1];
 
 	for (i = 0; i < text_len; i++)
@@ -799,8 +799,6 @@ nexti:		;
 
 void MPtok::tok_20_2()
 {
-	int	j;
-
 	for (int i = 0; i < text_len - 1; ++i)
 	{
 		if (text[i] == '.' && tokflag[i] == 1
@@ -1102,8 +1100,6 @@ void MPtok::tok_30()
 
 void MPtok::tok_31()
 {
-	int	j;
-
 	for (int i = 0; i < text_len; i++)
 	{
 		if (text[i] == ','
@@ -1125,8 +1121,6 @@ void MPtok::tok_31()
 
 void MPtok::tok_32()
 {
-	int	j;
-
 	for (int i = 0; i < text_len; i++)
 	{
 		if (text[i] == ' '
@@ -1194,8 +1188,6 @@ void MPtok::tok_un()
 
 void MPtok::set_tokflag()
 {
-	int	i;
-
 	tok_0();
 	tok_1();
 	tok_2();
@@ -1934,7 +1926,7 @@ static void print_word(const char *s, int i)
 
 void MPtok::print(int how)
 {
-	int     i, j, w;
+	int     i, w;
 
 	if (how != 0 && how != 2)
 	{
