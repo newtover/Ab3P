@@ -1,8 +1,8 @@
 #include "Ab3P.h"
 
 Ab3P::Ab3P ( void ) :
-  buffer(""),
-  wrdData( new WordData ) 
+  wrdData( new WordData ),
+  buffer("")
 {
     
   string sf_grp, sf_nchr, strat;
