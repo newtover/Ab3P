@@ -1,4 +1,4 @@
-NCBITEXTLIB=NCBITextLib/
+NCBITEXTLIB=NCBITextLib
 LIBPATH=./lib
 OS=-g -Wall -Wno-missing-braces
 # OS=-O
@@ -17,6 +17,7 @@ all:
 	make data
 
 programs:
+	make ncbi_lib
 	make library
 	make make_wordSet
 	make make_wordCountHash
@@ -24,6 +25,9 @@ programs:
 
 library:
 	cd lib; make
+
+ncbi_lib:
+	$(MAKE) -C $(NCBITEXTLIB)/lib libText.a
 
 data:
 	./make_wordSet WordData/stop stop
@@ -45,6 +49,6 @@ clean:
 make_wordSet:		make_wordSet.o
 make_wordCountHash:	make_wordCountHash.o
 identify_abbr:		identify_abbr.o lib/libAb3P.a
-identify_abbr.o:	lib/Ab3P.h
+identify_abbr.o:	lib/Ab3P.h ncbi_lib
 identify_abbr_loc:	identify_abbr.o lib/libAb3P.a
-identify_abbr_loc.o:	lib/Ab3P.h
+identify_abbr_loc.o:	lib/Ab3P.h ncbi_lib

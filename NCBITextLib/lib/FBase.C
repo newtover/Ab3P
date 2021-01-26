@@ -97,9 +97,13 @@ void FBase::map_down_sub(FBase *pFb,const char *subtype) {
 
 void FBase::get_pathx(char *nam,const char *ch) {
    char cnam[256];
+   char *env_path = getenv("AB3P_DATA_DIR");
    ifstream fin;
 
-   if(eflag==2) {
+   if (env_path) {
+//      cout << "ENV: |" << env_path << "|" << endl;
+      strcpy(nam, env_path);
+   } else if(eflag==2) {
       strcpy(cnam,"path_");
       strcat(cnam,pnam);
       fin.open(cnam,ios::in);
@@ -158,6 +162,7 @@ void FBase::get_pathx(char *nam,const char *ch) {
    strcat(nam,name);
    strcat(nam,".");
    strcat(nam,ch);
+//   cout << "nam: |" << nam << "|" << endl;
 }
 
 ifstream *FBase::get_Istr(const char *a,ios::openmode mode) {
