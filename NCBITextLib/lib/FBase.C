@@ -118,7 +118,6 @@ void FBase::get_pathx(char *nam,const char *ch) {
       }
       fin.getline(nam,256);
       fin.close();
-      strcpy(nam, getenv(cnam));
    }
    else if(eflag) {
       strcpy(cnam,"path_");
