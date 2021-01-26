@@ -102,18 +102,19 @@ void FBase::get_pathx(char *nam,const char *ch) {
    if(eflag==2) {
       strcpy(cnam,"path_");
       strcat(cnam,pnam);
-      fin.open(cnam,ios::in);
-      if(!fin.is_open()) {
-         fin.clear();
-         strcpy(cnam,"path");
-         fin.open(cnam,ios::in);
-         if(!fin.is_open()) {
-            cout << "Path file for type " << type << " does not exist!" << endl;
-            exit(1);
-         }
-      }
-      fin.getline(nam,256);
-      fin.close();
+//      fin.open(cnam,ios::in);
+//      if(!fin.is_open()) {
+//         fin.clear();
+//         strcpy(cnam,"path");
+//         fin.open(cnam,ios::in);
+//         if(!fin.is_open()) {
+//            cout << "Path file for type " << type << " does not exist!" << endl;
+//            exit(1);
+//         }
+//      }
+//      fin.getline(nam,256);
+//      fin.close();
+       strcpy(nam, getenv(cnam));
    }
    else if(eflag) {
       strcpy(cnam,"path_");
