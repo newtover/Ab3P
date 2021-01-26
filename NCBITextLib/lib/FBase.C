@@ -97,7 +97,7 @@ void FBase::map_down_sub(FBase *pFb,const char *subtype) {
 
 void FBase::get_pathx(char *nam,const char *ch) {
    char cnam[256];
-   char *env_path = getenv("AB3P_PATH");
+   char *env_path = getenv("AB3P_DATA_DIR");
    ifstream fin;
 
    if (env_path) {
