@@ -58,7 +58,8 @@ It processes the input one line at a time and prints out:
 
 To run this program in a directory other than where it was originally
 built, include a file called `path_Ab3P` in the directory that gives
-the path to the WordData directory. Include the final slash (/).
+the path to the WordData directory or set `$AB3P_PATH` environment variable.
+Include the final slash (/).
 
 The program `identify_abbr.C` also provides an example of using the Ab3P
 library in a program.  Documentation on the routines can be found in
